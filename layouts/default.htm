@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- title -->
+    <title>{{ this.page.meta_title }}</title>
+
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="{{ this.page.meta_description }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- stylesheets -->
+    <link href="{{ 'assets/css/screen.css'|theme }}" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="{{ 'assets/css/print.css'|theme }}" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+        <link href="{{ 'assets/css/ie.css'|theme }}" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- icons -->
+    <link rel="shortcut icon" href="{{ 'assets/img/favicon.png'|theme }}">
+
+    <!-- javascript -->
+    <script src="{{ 'assets/js/jquery.js'|theme }}"></script>
+    <script src="{{ 'assets/js/jquery.placeholder.js'|theme }}"></script>
+    <script>
+
+        $(document).ready(function(){
+            $('form').submit(function(){
+                $('input[type=submit]').attr('disabled','disabled');
+            });
+            $('.newpage').click(function(){
+                window.open($(this).attr('href'));
+                return false;
+            });
+            $('input').placeholder();
+        });
+
+    </script>
+    <!--[if lt IE 9]>
+        <script src="{{ 'assets/js/html5shiv.js'|theme }}"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+    Hello World!
+
+</body>
+</html>
